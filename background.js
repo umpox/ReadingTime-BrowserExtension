@@ -32,6 +32,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
 chrome.browserAction.onClicked.addListener(
  function(tab) {
-  //code will run on click of icon
+   chrome.tabs.executeScript(null, {file: "content.js"});
  }
 );
