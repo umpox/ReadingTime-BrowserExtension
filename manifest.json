@@ -4,21 +4,21 @@
   "name": "Reading Time",
   "description": "Display the reading time of any web page",
   "version": "1.0",
-  "options_page": "options.html",
+  "options_page": "html/options.html",
 
   "browser_action": {
     "default_title": "Get reading time"
   },
 
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["js/background.js"]
   },
 
   "content_scripts": [
     {
       "run_at" : "document_end",
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": ["js/content.js"]
     }
   ],
   
