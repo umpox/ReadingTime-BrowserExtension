@@ -11,7 +11,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       context.font = "11px Arial";     
     }
     else if (request.newBadge >= 10) {
-      content.font = "15px Arial";
+      context.font = "15px Arial";
     }
     else {
       context.font = "18px Arial";
