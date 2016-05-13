@@ -19,8 +19,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
     context.textAlign = "center";
     context.textBaseline = "middle";
+    context.fillStyle = "#000000";
     context.fillText(request.newBadge, 10, 10);
-    context.fillStyle = "#FFFFFF";
                
     newBadge = context.getImageData(0, 0, 19, 19);
     
@@ -30,14 +30,14 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   }
 });
 
-chrome.browserAction.onClicked.addListener(
- function(tab) {
-   chrome.tabs.executeScript(null, {file: "content.js"});
- }
-);
-
 chrome.tabs.onActivated.addListener( 
   function(info) {
+    chrome.tabs.executeScript(null, {file: "content.js"});
+  }
+);
+
+chrome.tabs.onUpdated.addListener(
+  function(tabId, changeInfo, tab) {
     chrome.tabs.executeScript(null, {file: "content.js"});
   }
 );
