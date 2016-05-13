@@ -35,3 +35,9 @@ chrome.browserAction.onClicked.addListener(
    chrome.tabs.executeScript(null, {file: "content.js"});
  }
 );
+
+chrome.tabs.onActivated.addListener( 
+  function(info) {
+    chrome.tabs.executeScript(null, {file: "content.js"});
+  }
+);
