@@ -2,14 +2,14 @@ var canvas = document.createElement('canvas');
 var context = canvas.getContext('2d');
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  if (request) {
+  if (request.newBadge) {
     canvas.width = 19;
     canvas.height = 19;
-    
-    if (request.newBadge >= 100) {
+        
+    if (request.newBadge.timeToRead >= 100) {
       context.font = "11px Arial";     
     }
-    else if (request.newBadge >= 10) {
+    else if (request.newBadge.timeToRead >= 10) {
       context.font = "15px Arial";
     }
     else {
@@ -19,7 +19,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     context.textAlign = "center";
     context.textBaseline = "middle";
     context.fillStyle = "#000000";
-    context.fillText(request.newBadge, 10, 10);
+    context.fillText(request.newBadge.timeToRead, 10, 10);
     
     chrome.browserAction.setIcon({
       imageData: context.getImageData(0, 0, 19, 19)
