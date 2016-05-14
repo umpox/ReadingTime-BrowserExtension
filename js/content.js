@@ -1,42 +1,22 @@
 var wordCount = document.body.innerText.split(' ').length;
-var readingSpeed;
+var readingSpeed = 275;
+var iconColor = "#000000";
 var timeToRead;
-
-//var readingSpeed = 275; //Words per minute
-//var timeToRead = Math.ceil(wordCount / readingSpeed);
-var iconColor;
 var message = {};
 
-chrome.storage.local.get(null, function(result){
-  if (result.rSpeed === undefined) {
-    readingSpeed = 275;
-  }
-  else {
-    readingSpeed = result.rSpeed;
-  }
-  
-  if (result.iColor === undefined) {
-    iconColor = "#000000";
-  }
-  else {
-    iconColor = result.iColor;
-  }
-  
-});
+//Check localStorage for saved values
+if (localStorage.readingSpeed !== undefined) {
+  readingSpeed = localStorage.timeToRead;
+}
+if (localStorage.iconColor !== undefined) {
+  iconColor = localStorage.iconColor;
+}
 
+timeToRead = Math.ceil(wordCount / readingSpeed);
+message.timeToRead = timeToRead;
+message.iconColor = iconColor;
 
-  message.iconColor = iconColor;
-  message.timeToRead = Math.ceil(wordCount / readingSpeed);
-  /*chrome.storage.sync.set({'value': theValue}, function() {
-    // Notify that we saved.
-    message('Settings saved');
-  });*/
-
-chrome.runtime.sendMessage({newBadge: message}, 
-  function(response){
-      //Respond to badge successfully changing?
-  }
-);
+chrome.runtime.sendMessage({newBadge: message});
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
