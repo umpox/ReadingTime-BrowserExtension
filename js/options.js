@@ -10,15 +10,13 @@ saveBtn.addEventListener('click', function() {
   validateInput(wpmValue.value, colorValue.value); 
 });
 
+//Adding event listener to buttons as Chrome does not allow HTML onclick events
 resetBtn.addEventListener('click', function() {
   wpmValue.value = defaultWpm;
   colorValue.value = defaultColor;
   
-  chrome.storage.local.set({'readingSpeed': defaultWpm});
-  chrome.storage.local.set({'iconColor': defaultColor});
-  
-  notifyMsg.innerHTML = "Success! Your values have been reset to default and saved.";
-  notifyMsg.style.color = "green";
+  storeValues(defaultWpm, defaultColor);
+  notifyMessage("success-reset");
 });
 
 //Check storage for current color and reading speed values
@@ -37,25 +35,50 @@ chrome.storage.local.get(null, function (result) {
   }
 });
 
+//Check input matches regex before using it
 function validateInput(wpm, color) {
   var colorRegex = /^#([0-9a-f]{6}|[0-9a-f]{3})$/i;
   var numRegex = /^\d+$/;
   
   if (wpm === '' || color === '') {
-    notifyMsg.innerHTML = 'Error: Please ensure all fields have a value.';
-    notifyMsg.style.color = "green";
+    notifyMessage("error-reset");
     return;
   }
   
   if ( numRegex.test(wpm) && colorRegex.test(color) ) {
-    chrome.storage.local.set({'readingSpeed': wpm});
-    chrome.storage.local.set({'iconColor': color});
+    storeValues(wpm, color);
+    notifyMessage("success-save");
+  }
+  else {
+    notifyMessage("error-format");
+  } 
+}
+
+//Save values to storage
+function storeValues(wpm, color) {
+  chrome.storage.local.set({'readingSpeed': wpm});
+  chrome.storage.local.set({'iconColor': color});  
+}
+
+//Generate response message
+function notifyMessage(status) { 
+  if (status === "success-reset") {
+    notifyMsg.innerHTML = "Success! Your values have been reset to default and saved.";
+    notifyMsg.style.color = "green";
+  }
+  else if (status === "success-save") {
     notifyMsg.innerHTML = "Success! Your new values have been saved.";
     notifyMsg.style.color = "green";
   }
-  else {
-    notifyMsg.innerHTML = 'Error: Incorrect format, please check your values.';
+  else if (status === "error-format") {
+    notifyMsg.innerHTML = 'Error: Incorrect format, please check your values.';   
     notifyMsg.style.color = "red";
   }
-  
+  else if (status === "error-reset") {
+    notifyMsg.innerHTML = 'Error: Please ensure all fields have a value.';
+    notifyMsg.style.color = "red";
+  }
+  else {
+    notifyMsg.innerHTML = 'Unknown response.';
+  }
 }
