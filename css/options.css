@@ -2,11 +2,9 @@
   list-style-type: none;
   width: 300px;
 }
-
 #userSettings .userSettings-list {
   display: table;
 }
-
 #userSettings .userSettings-list span {
   display: table-cell;
   width: 50%;
