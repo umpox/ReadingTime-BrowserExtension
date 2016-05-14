@@ -7,14 +7,31 @@
   <body>
     <h1>Instant Reading Time</h1>
     <ul id="userSettings">
-      <li>
-        Reading Speed (WPM): <input type="number" name="WPM" value="275">
+      <li class="userSettings-list">
+        <span class="userSettings-list_text">
+          Reading Speed (WPM):
+        </span>
+        <span class="userSettings-list_value">
+          <input id="userSettings-list_value_wpm" type="number" name="WPM" value="275" placeholder="275">
+        </span>
       </li>
-      <li>
-        Icon Color: <input type="text" name="Color" value="#000000">        
+      <li class="userSettings-list">
+				<span class="userSettings-list_text">
+          Icon Color (HEX):
+        </span>
+        <span class="userSettings-list_value">
+          <input id="userSettings-list_value_color" type="text" name="Color" value="#000000" placeholder="#000000">        
+        </span>
       </li>
+      <li class="userSettings-list">
+			  <input id="userSettings-list_reset" type="submit" value="Reset">
+        <input id="userSettings-list_save" type="submit" value="Save">
+      </li>
+			<li class="userSettings-list">
+			  <p id="userSettings-list_error"></p>
+			</li>
     </ul>    
     
-    <script src="options.js"></script>
+    <script src="../js/options.js"></script>
   </body>
 </html>
