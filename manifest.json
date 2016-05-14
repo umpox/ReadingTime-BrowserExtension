@@ -6,6 +6,9 @@
   "version": "1.0",
   "options_page": "html/options.html",
 
+  "browser_action": {
+  },
+
   "background": {
     "scripts": ["js/background.js"]
   },
