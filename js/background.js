@@ -1,6 +1,5 @@
 var canvas = document.createElement('canvas');
 var context = canvas.getContext('2d');
-var newBadge;
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request) {
@@ -21,11 +20,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     context.textBaseline = "middle";
     context.fillStyle = "#000000";
     context.fillText(request.newBadge, 10, 10);
-               
-    newBadge = context.getImageData(0, 0, 19, 19);
     
     chrome.browserAction.setIcon({
-      imageData: newBadge
+      imageData: context.getImageData(0, 0, 19, 19)
     });
   }
 });
