@@ -18,7 +18,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
     context.textAlign = "center";
     context.textBaseline = "middle";
-    context.fillStyle = "#000000";
+    context.fillStyle = request.newBadge.iconColor;
     context.fillText(request.newBadge.timeToRead, 10, 10);
     
     chrome.browserAction.setIcon({
