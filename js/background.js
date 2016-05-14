@@ -28,13 +28,13 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 });
 
 chrome.tabs.onActivated.addListener( 
-  function(info) {
+  function() {
     chrome.tabs.executeScript(null, {file: "js/content.js"});
   }
 );
 
 chrome.tabs.onUpdated.addListener(
-  function(tabId, changeInfo, tab) {
+  function() {
     chrome.tabs.executeScript(null, {file: "js/content.js"});
   }
 );
