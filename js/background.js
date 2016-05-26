@@ -38,7 +38,7 @@ chrome.tabs.onActivated.addListener(
 );
 
 chrome.tabs.onUpdated.addListener(
-  function(tabId, changeInfo, tab) {
+  function(changeInfo, tab) {
     if (tab.status === 'complete') {
       executeContentScript();
     }
