@@ -44,3 +44,9 @@ chrome.tabs.onUpdated.addListener(
     }
   }
 );
+
+
+//ON BROWSER CLOSE
+/*chrome.windows.onRemoved.addListener(function(windowId){
+
+});*/
