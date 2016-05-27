@@ -9,3 +9,6 @@
   display: table-cell;
   width: 50%;
 }
+#userSettings .userSettings-list span input {
+  width: 50%;
+}
