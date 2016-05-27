@@ -1,3 +1,4 @@
+/*Input fields*/
 #userSettings {
   list-style-type: none;
   width: 300px;
@@ -13,4 +14,15 @@
 }
 #userSettings .userSettings-list span input {
   width: 50%;
+}
+
+/*Buttons*/
+#userSettings .userSettings-list#userButtons {
+  margin-top: 10px;
+}
+#userSettings .userSettings-list#userButtons input:first-child {
+  margin-right:10px;
+}
+#userSettings .userSettings-list#userButtons input {
+  width: 65px;
 }
