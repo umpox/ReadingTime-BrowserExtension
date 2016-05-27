@@ -9,4 +9,5 @@ To configure this extension, simply access the 'options' page by right-clicking 
 
 ## TO-DO
 - Investigate reading time for a page changing when going back and forth between tabs
+- Fix extension crashing when browser is closed during script execution
 - Improve options page CSS
