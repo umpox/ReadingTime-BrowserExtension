@@ -1,9 +1,11 @@
 #userSettings {
   list-style-type: none;
   width: 300px;
+  padding-left: 20px;
 }
 #userSettings .userSettings-list {
   display: table;
+  margin-bottom: 3px;
 }
 #userSettings .userSettings-list span {
   display: table-cell;
