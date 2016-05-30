@@ -1,3 +1,4 @@
+"use strict";
 var wordCount = document.body.innerText.split(' ').length;
 var readingSpeed = 275;
 var iconColor = "#000000";

@@ -1,3 +1,4 @@
+"use strict";
 var saveBtn = document.getElementById('userSettings-list_save');
 var resetBtn = document.getElementById('userSettings-list_reset');
 var wpmValue = document.getElementById('userSettings-list_value_wpm');
