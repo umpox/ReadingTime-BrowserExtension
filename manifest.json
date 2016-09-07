@@ -25,6 +25,7 @@
   "permissions": [
     "http://*/*",
     "https://*/*",
-    "storage"
+    "storage",
+    "background"
   ]
 }
