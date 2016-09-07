@@ -6,6 +6,12 @@
   "version": "1.0",
   "options_page": "html/options.html",
 
+  "icons": { 
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png" 
+  },
+
   "browser_action": {
     "default_title": "Estimated time to read the current page (minutes)"
   },
