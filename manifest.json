@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "Reading Time",
+  "name": "Instant Reading Time",
   "description": "Display the reading time of the users current web page.",
   "version": "1.0",
   "options_page": "html/options.html",
