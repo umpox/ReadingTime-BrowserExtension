@@ -17,7 +17,7 @@ To configure this extension, simply access the 'options' page by right-clicking 
 ## Download
 This extension is available on the Chrome store.
 
-<a href="https://chrome.google.com/webstore/detail/instant-reading-time/afipdkkndmggnmffcmepioemogfnnibf">Download now</a>
+<a href="https://chrome.google.com/webstore/detail/instant-reading-time/afipdkkndmggnmffcmepioemogfnnibf">Download</a>
 
 ## TO-DO
 - Investigate reading time for a page changing when going back and forth between tabs
