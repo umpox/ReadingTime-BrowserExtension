@@ -14,6 +14,11 @@ Simply install this extension and ensure it is visible in your Chrome toolbar. A
 ## Config
 To configure this extension, simply access the 'options' page by right-clicking the icon in your browser toolbar. Here you can alter reading speed and icon text color. The latter is especially useful if the icon is difficult to read on your Chrome theme.
 
+## Download
+This extension is available on the Chrome store.
+
+<a href="https://chrome.google.com/webstore/detail/instant-reading-time/afipdkkndmggnmffcmepioemogfnnibf">Download now</a>
+
 ## TO-DO
 - Investigate reading time for a page changing when going back and forth between tabs
 - Fix extension crashing when browser is closed during script execution
