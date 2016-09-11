@@ -1,4 +1,7 @@
 # ReadingTime-BrowserExtension
+<img src="https://lh3.googleusercontent.com/fWCnmD7MhDeiyYR6KFgBSWHLkGAeZdoSMZLxyAqFgg_s-O9uzZxSHy703G-7dU3N3tJwlppoMe8=s1280-h800-e365-rw">
+
+
 This browser extension displays the reading time of the users current web page.
 
 With so much content on the web, nobody has time to read it all. Instant Reading Time uses your own reading speed to calculate the amount of minutes it will take for you to read the current page. 
