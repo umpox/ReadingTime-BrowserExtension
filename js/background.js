@@ -38,6 +38,11 @@ chrome.tabs.onActivated.addListener(
   }
 );
 
+chrome.browserAction.onClicked.addListener(
+  function(tab) { 
+    executeContentScript();
+  }
+);
 
 /*Optional function can be added if encountering issues with AJAX sites. Warning: Can cause issues when browser is terminated whilst the script is running
 
