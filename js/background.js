@@ -32,12 +32,14 @@ function executeContentScript() {
   chrome.tabs.executeScript(null, {file: "js/content.js"});
 }
 
+//Execute script when a new tab is selected
 chrome.tabs.onActivated.addListener(
   function() {
     executeContentScript();
   }
 );
 
+//Execute script on extension icon clicked
 chrome.browserAction.onClicked.addListener(
   function(tab) { 
     executeContentScript();
