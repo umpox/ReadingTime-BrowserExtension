@@ -1,4 +1,5 @@
 "use strict";
+//Canvas is used to change the extension icon on the fly
 var canvas = document.createElement('canvas');
 var context = canvas.getContext('2d');
 
@@ -6,7 +7,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.newBadge) {
     canvas.width = 19;
     canvas.height = 19;
-        
+    
+    //Alter text size depending on timeToRead value
     if (request.newBadge.timeToRead >= 100) {
       context.font = "11px Arial";     
     }
