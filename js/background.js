@@ -38,10 +38,13 @@ chrome.tabs.onActivated.addListener(
   }
 );
 
+
+/*Optional function can be added if encountering issues with AJAX sites. Warning: Can cause issues when browser is terminated whilst the script is running
+
 chrome.tabs.onUpdated.addListener(
   function(changeInfo, tab) {
     if (tab.status === 'complete') {
       executeContentScript();
     }
   }
-);
+);*/
