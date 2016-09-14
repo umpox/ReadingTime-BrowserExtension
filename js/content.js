@@ -1,9 +1,11 @@
 "use strict";
 var wordCount = document.body.innerText.split(' ').length;
-var readingSpeed = 275;
-var iconColor = "#000000";
 var timeToRead;
 var message = {};
+
+//Default settings
+var readingSpeed = 275;
+var iconColor = "#000000";
 
 //Check localStorage for saved values
 chrome.storage.local.get(null, function (result) {    
