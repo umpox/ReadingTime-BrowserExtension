@@ -20,5 +20,4 @@ This extension is available on the Chrome store.
 <a href="https://chrome.google.com/webstore/detail/instant-reading-time/afipdkkndmggnmffcmepioemogfnnibf">Download</a>
 
 ## TO-DO
-- Fix extension crashing when browser is closed during script execution
 - Improve options page CSS
