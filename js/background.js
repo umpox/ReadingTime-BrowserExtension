@@ -33,22 +33,26 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 //Execute script when a new tab is selected
 chrome.tabs.onActivated.addListener(
   function() {
-    chrome.tabs.executeScript(null, {file: "js/content.js"});   
+      executeContentScript();
   }
 );
 
 //Execute script on extension icon clicked
 chrome.browserAction.onClicked.addListener(
   function(tab) { 
-    chrome.tabs.executeScript(null, {file: "js/content.js"});   
+     executeContentScript();
   }
 );
 
-/*Optional function can be added if encountering issues with AJAX sites. Warning: Can cause issues when browser is terminated whilst the script is running
+//Optional function can be added if encountering issues with AJAX sites. Warning: Can cause issues when browser is terminated whilst the script is running
 chrome.tabs.onUpdated.addListener(
-  function(changeInfo, tab) {
-    if (tab.status === 'complete') {
-      chrome.tabs.executeScript(null, {file: "js/content.js"});   
+  function(tabId, changeInfo, tab) {
+    if (changeInfo.status === 'complete') {
+      executeContentScript();
     }
   }
-);*/
+);
+
+function executeContentScript() {
+  chrome.tabs.executeScript(null, {file: "js/content.js", runAt: "document_end"});          
+}
