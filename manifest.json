@@ -3,7 +3,7 @@
 
   "name": "Instant Reading Time",
   "description": "Display the reading time of the users current web page.",
-  "version": "1.1",
+  "version": "1.2",
   "options_page": "html/options.html",
 
   "icons": { 
