@@ -2,8 +2,8 @@
   "manifest_version": 2,
 
   "name": "Instant Reading Time",
-  "description": "Display the reading time of the users current web page.",
-  "version": "1.5",
+  "description": "Display the reading time of the users current web page in the browser toolbar.",
+  "version": "1.6",
   "options_page": "html/options.html",
 
   "icons": { 
